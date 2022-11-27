@@ -1,0 +1,17 @@
+#!/bin/bash
+#automate installation and basic setup of terraform so that it is ready to use on ec2
+#curl thisurl | sh
+
+#installing utilities and adding the neccesary linux repository for terraform
+sudo yum -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+
+#install terraform
+sudo yum -y install terraform
+
+#download, unzip and install awscli
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+#aws configure
