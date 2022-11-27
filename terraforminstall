@@ -14,11 +14,4 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
-#aws configure
-aws configure
-
-#ask for session token and then append it 
-#sessiontoken is only necessary for temporary credentials
-#for this script you need to include the "aws_session_token=" part aswell
-read sessiontoken
-echo sessiontoken | tee -a credentials
+echo "Now run aws configure and input your configurations. Dont forget to add the session token to the config file if using temporary credentials"
