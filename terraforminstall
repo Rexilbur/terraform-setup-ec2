@@ -1,6 +1,6 @@
 #!/bin/bash
 #automate installation and basic setup of terraform so that it is ready to use on ec2
-#curl thisurl | sh
+#curl https://raw.githubusercontent.com/Rexilbur/terraform-setup-ec2/main/terraforminstall | sh
 
 #installing utilities and adding the neccesary linux repository for terraform
 sudo yum -y yum-utils
@@ -15,3 +15,10 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 #aws configure
+aws configure
+
+#ask for session token and then append it 
+#sessiontoken is only necessary for temporary credentials
+#for this script you need to include the "aws_session_token=" part aswell
+read sessiontoken
+echo sessiontoken | tee -a credentials
