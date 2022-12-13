@@ -21,6 +21,8 @@ sudo ./aws/install
 sudo yum -y install python37
 curl -O https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py --user
+echo "export PATH=/home/ec2-user:$PATH" >> ~/.bash_profile
+pip3 install boto3
 
 echo "Now run aws configure and input your configurations."
 echo "Dont forget to cd into .aws and add the session token to the config file if using temporary credentials"
